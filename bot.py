@@ -2,6 +2,7 @@
 import json
 import os
 import random
+import re
 from pathlib import Path
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import (
@@ -16,205 +17,253 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 BASE = Path(__file__).resolve().parent
 
-with open(BASE / "bg_chapter1_test_questions_mvp.json", "r", encoding="utf-8") as f:
-    QUESTIONS = json.load(f).get("questions", [])
+with open(BASE / "bg_chapter1_questions_full.json", "r", encoding="utf-8") as f:
+    QUESTIONS = json.load(f)["questions"]
 
 USER = {}
 
-def menu():
+def normalize(text):
+    text = text.lower()
+    text = re.sub(r"[-–—\\s]", "", text)
+    text = re.sub(r"[.,!?()]", "", text)
+    replacements = {
+        "ṣ":"s","ś":"s","ā":"a","ī":"i","ū":"u","ṛ":"r","ṅ":"n","ñ":"n","ṭ":"t","ḍ":"d","ḥ":"h","ṃ":"m","ç":"c"
+    }
+    for k,v in replacements.items():
+        text = text.replace(k,v)
+    return text
+
+def main_menu():
     return ReplyKeyboardMarkup([
         [KeyboardButton("📖 Изучение"), KeyboardButton("🧠 Тест")],
-        [KeyboardButton("🃏 Карточки"), KeyboardButton("📊 Прогресс")],
-        [KeyboardButton("🔥 Daily"), KeyboardButton("⚙ Настройки")]
+        [KeyboardButton("🔥 Daily Practice"), KeyboardButton("📊 Прогресс")],
+        [KeyboardButton("⚙ Настройки")]
     ], resize_keyboard=True)
 
-def level_menu():
+def study_menu():
     return ReplyKeyboardMarkup([
-        [KeyboardButton("Level 1")],
-        [KeyboardButton("Level 2")],
+        [KeyboardButton("10 карточек"), KeyboardButton("20 карточек")],
         [KeyboardButton("⬅️ Меню")]
     ], resize_keyboard=True)
 
-def answer_menu(opts):
-    rows = [[KeyboardButton(x)] for x in opts]
-    rows.append([KeyboardButton("➡️ Далее")])
+def settings_menu():
+    return ReplyKeyboardMarkup([
+        [KeyboardButton("🇷🇺 Русский"), KeyboardButton("🇬🇧 English")],
+        [KeyboardButton("🌍 RU + EN")],
+        [KeyboardButton("📚 Выбор стихов")],
+        [KeyboardButton("⬅️ Меню")]
+    ], resize_keyboard=True)
+
+def card_buttons():
+    return ReplyKeyboardMarkup([
+        [KeyboardButton("✅ Знаю"), KeyboardButton("🤔 Затрудняюсь")],
+        [KeyboardButton("❌ Не знаю")],
+        [KeyboardButton("➡️ Следующая карточка")],
+        [KeyboardButton("⬅️ Меню")]
+    ], resize_keyboard=True)
+
+def verse_menu():
+    return ReplyKeyboardMarkup([
+        [KeyboardButton("1.1"), KeyboardButton("1.1–1.5")],
+        [KeyboardButton("Глава 1"), KeyboardButton("Вся Гита")],
+        [KeyboardButton("⬅️ Меню")]
+    ], resize_keyboard=True)
+
+def answer_buttons(options):
+    rows = [[KeyboardButton(x)] for x in options]
     rows.append([KeyboardButton("⬅️ Меню")])
     return ReplyKeyboardMarkup(rows, resize_keyboard=True)
 
-def flash_menu():
-    return ReplyKeyboardMarkup([
-        [KeyboardButton("✅ Знаю"), KeyboardButton("⚠️ Сложно")],
-        [KeyboardButton("🔁 Повторить"), KeyboardButton("⬅️ Меню")]
-    ], resize_keyboard=True)
+def get_lang_question(q, lang):
+    if lang == "EN":
+        return q.get("question_en", q["question_ru"])
+    if lang == "BOTH":
+        return f"{q['question_ru']}\\n\\n{q.get('question_en','')}"
+    return q["question_ru"]
 
-def get_questions(level):
-    if level == 1:
-        out = [q for q in QUESTIONS if q.get("is_key_verse")]
-        return out if out else QUESTIONS
-    return QUESTIONS
+def get_lang_answers(q):
+    return q.get("accepted_answers", [q["answer_ru"]])
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid = update.effective_user.id
+
     USER.setdefault(uid, {
-        "xp": 0,
-        "correct": 0,
-        "total": 0,
-        "streak": 0,
-        "hard": [],
-        "favorites": []
+        "xp":0,
+        "correct":0,
+        "total":0,
+        "lang":"RU",
+        "study_size":20,
+        "mode":None,
+        "queue":[],
+        "current":None
     })
 
-    text = (
-        "🌿 Живая Гита\n\n"
-        "MVP первой главы.\n\n"
-        "Доступно:\n"
-        "• тесты\n"
-        "• карточки\n"
-        "• XP\n"
-        "• сложные вопросы\n"
-        "• Daily practice\n"
-        "• прогресс\n"
+    await update.message.reply_text(
+        "🌿 Живая Гита\\n\\nПолноценный MVP первой главы.",
+        reply_markup=main_menu()
     )
 
-    await update.message.reply_text(text, reply_markup=menu())
-
-async def send_question(update, uid):
+async def send_study_card(update, uid):
     state = USER[uid]
 
     if not state["queue"]:
         await update.message.reply_text(
-            f"✅ Тест завершён\n\n"
-            f"Правильных: {state['session_correct']}/{state['session_total']}\n"
-            f"XP: {state['xp']}",
-            reply_markup=menu()
+            "✅ Сессия изучения завершена",
+            reply_markup=main_menu()
         )
         return
 
     q = state["queue"].pop(0)
     state["current"] = q
 
-    opts = q.get("options", [])
-
-    correct = q.get("answer_ru")
-    if correct and correct not in opts:
-        opts.append(correct)
-
-    random.shuffle(opts)
-
     await update.message.reply_text(
-        q.get("question_ru", "Вопрос"),
-        reply_markup=answer_menu(opts)
+        "🃏 Карточка\\n\\n" + get_lang_question(q, state["lang"]),
+        reply_markup=card_buttons()
     )
 
-async def show_card(update, uid):
-    q = random.choice(QUESTIONS)
-    USER[uid]["card"] = q
+async def reveal_card(update, uid):
+    q = USER[uid]["current"]
 
     text = (
-        f"🃏 Карточка\n\n"
-        f"{q.get('question_ru','')}\n\n"
-        f"Ответ:\n{q.get('answer_ru','')}"
+        "✅ Правильный ответ:\\n\\n"
+        + q["answer_ru"]
     )
 
-    await update.message.reply_text(text, reply_markup=flash_menu())
+    if q.get("answer_en"):
+        text += "\\n" + q["answer_en"]
+
+    if q.get("answer_iast"):
+        text += "\\n" + q["answer_iast"]
+
+    await update.message.reply_text(text, reply_markup=card_buttons())
+
+async def send_test_question(update, uid):
+    state = USER[uid]
+
+    if not state["queue"]:
+        await update.message.reply_text(
+            f"🏁 Тест завершён\\n\\n"
+            f"Правильных: {state['session_correct']}/{state['session_total']}",
+            reply_markup=main_menu()
+        )
+        return
+
+    q = state["queue"].pop(0)
+    state["current"] = q
+
+    qtype = q.get("type","choice")
+
+    if qtype == "choice":
+        opts = q["options"][:]
+        random.shuffle(opts)
+
+        await update.message.reply_text(
+            "🧠 Тест\\n\\n" + get_lang_question(q, state["lang"]),
+            reply_markup=answer_buttons(opts)
+        )
+    else:
+        await update.message.reply_text(
+            "🧠 Тест\\n\\n"
+            + get_lang_question(q, state["lang"])
+            + "\\n\\n✍️ Напиши ответ",
+            reply_markup=ReplyKeyboardMarkup([
+                [KeyboardButton("⬅️ Меню")]
+            ], resize_keyboard=True)
+        )
 
 async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid = update.effective_user.id
-    USER.setdefault(uid, {
-        "xp": 0,
-        "correct": 0,
-        "total": 0,
-        "streak": 0,
-        "hard": [],
-        "favorites": []
+    USER.setdefault(uid,{
+        "xp":0,
+        "correct":0,
+        "total":0,
+        "lang":"RU",
+        "study_size":20,
+        "mode":None,
+        "queue":[],
+        "current":None
     })
 
-    txt = update.message.text
     state = USER[uid]
+    txt = update.message.text
 
     if txt == "⬅️ Меню":
-        await update.message.reply_text("Главное меню", reply_markup=menu())
+        await update.message.reply_text("Главное меню", reply_markup=main_menu())
         return
 
     if txt == "📖 Изучение":
+        state["mode"] = "study"
         await update.message.reply_text(
-            "Выберите уровень",
-            reply_markup=level_menu()
+            "Выберите количество карточек",
+            reply_markup=study_menu()
         )
+        return
+
+    if txt in ["10 карточек","20 карточек"]:
+        size = 10 if "10" in txt else 20
+        state["study_size"] = size
+        state["queue"] = random.sample(QUESTIONS, min(size, len(QUESTIONS)))
+        await send_study_card(update, uid)
+        return
+
+    if txt in ["✅ Знаю","🤔 Затрудняюсь","❌ Не знаю"]:
+        await reveal_card(update, uid)
+        return
+
+    if txt == "➡️ Следующая карточка":
+        await send_study_card(update, uid)
         return
 
     if txt == "🧠 Тест":
-        await update.message.reply_text(
-            "Выберите уровень теста",
-            reply_markup=level_menu()
-        )
-        return
-
-    if txt == "Level 1":
-        state["queue"] = get_questions(1)[:5]
+        state["mode"] = "test"
+        state["queue"] = QUESTIONS[:]
         random.shuffle(state["queue"])
         state["session_correct"] = 0
         state["session_total"] = 0
-        await send_question(update, uid)
-        return
-
-    if txt == "Level 2":
-        state["queue"] = get_questions(2)[:15]
-        random.shuffle(state["queue"])
-        state["session_correct"] = 0
-        state["session_total"] = 0
-        await send_question(update, uid)
-        return
-
-    if txt == "➡️ Далее":
-        await send_question(update, uid)
-        return
-
-    if txt == "🃏 Карточки":
-        await show_card(update, uid)
+        await send_test_question(update, uid)
         return
 
     if txt == "📊 Прогресс":
         await update.message.reply_text(
-            f"📊 Прогресс\n\n"
-            f"XP: {state['xp']}\n"
-            f"Правильных ответов: {state['correct']}\n"
-            f"Всего ответов: {state['total']}\n"
-            f"Сложных вопросов: {len(state['hard'])}\n"
-            f"Streak: {state['streak']}"
+            f"📊 Прогресс\\n\\n"
+            f"XP: {state['xp']}\\n"
+            f"Правильных ответов: {state['correct']}\\n"
+            f"Всего ответов: {state['total']}"
         )
         return
 
-    if txt == "🔥 Daily":
-        state["streak"] += 1
-        q = random.choice(get_questions(1))
-        await update.message.reply_text(
-            f"🔥 Daily practice\n\n"
-            f"{q.get('question_ru','')}\n\n"
-            f"Ответ:\n{q.get('answer_ru','')}",
-            reply_markup=flash_menu()
-        )
+    if txt == "🔥 Daily Practice":
+        state["queue"] = random.sample(QUESTIONS, min(5, len(QUESTIONS)))
+        await send_study_card(update, uid)
         return
 
     if txt == "⚙ Настройки":
         await update.message.reply_text(
-            "Настройки MVP\n\n"
-            "• RU включён\n"
-            "• Level 1/2 активны\n"
-            "• Daily active\n"
-            "• XP active",
-            reply_markup=menu()
+            "⚙ Настройки",
+            reply_markup=settings_menu()
         )
         return
 
-    if txt in ["✅ Знаю", "⚠️ Сложно", "🔁 Повторить"]:
-        if txt == "✅ Знаю":
-            state["xp"] += 1
-        elif txt == "⚠️ Сложно":
-            card = state.get("card")
-            if card:
-                state["hard"].append(card)
-        await show_card(update, uid)
+    if txt == "🇷🇺 Русский":
+        state["lang"] = "RU"
+        await update.message.reply_text("Язык переключён: Русский")
+        return
+
+    if txt == "🇬🇧 English":
+        state["lang"] = "EN"
+        await update.message.reply_text("Language switched: English")
+        return
+
+    if txt == "🌍 RU + EN":
+        state["lang"] = "BOTH"
+        await update.message.reply_text("Режим: RU + EN")
+        return
+
+    if txt == "📚 Выбор стихов":
+        await update.message.reply_text(
+            "Введите диапазон\\nнапример: 1.1, 1.1–1.5, Глава 1",
+            reply_markup=verse_menu()
+        )
         return
 
     current = state.get("current")
@@ -223,34 +272,27 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         state["total"] += 1
         state["session_total"] += 1
 
-        correct = current.get("answer_ru","").strip().lower()
+        answers = [normalize(x) for x in get_lang_answers(current)]
 
-        if txt.strip().lower() == correct:
+        if normalize(txt) in answers:
             state["correct"] += 1
             state["session_correct"] += 1
             state["xp"] += 2
-            await update.message.reply_text("✅ Правильно")
+
+            await update.message.reply_text(
+                "✅ Верно\\n\\nПравильный ответ:\\n" + current["answer_ru"]
+            )
         else:
             await update.message.reply_text(
-                f"❌ Неправильно\n\nПравильный ответ:\n{current.get('answer_ru','')}"
+                "❌ Неверно\\n\\nПравильный ответ:\\n" + current["answer_ru"]
             )
 
         state["current"] = None
-        await send_question(update, uid)
-        return
+        await send_test_question(update, uid)
 
-    await update.message.reply_text(
-        "Нажмите /start",
-        reply_markup=menu()
-    )
+app = Application.builder().token(BOT_TOKEN).build()
 
-def main():
-    app = Application.builder().token(BOT_TOKEN).build()
+app.add_handler(CommandHandler("start", start))
+app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, text_handler))
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, text_handler))
-
-    app.run_polling(drop_pending_updates=True)
-
-if __name__ == "__main__":
-    main()
+app.run_polling()

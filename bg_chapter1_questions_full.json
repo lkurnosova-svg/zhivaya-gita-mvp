@@ -1,0 +1,82 @@
+{
+  "questions": [
+    {
+      "type": "input",
+      "question_ru": "Сколько подглав в первой главе?",
+      "question_en": "How many subchapters are in Chapter 1?",
+      "answer_ru": "5",
+      "accepted_answers": [
+        "5",
+        "пять",
+        "five"
+      ]
+    },
+    {
+      "type": "choice",
+      "question_ru": "Как называется первая подглава?",
+      "question_en": "What is the first subchapter called?",
+      "answer_ru": "Вопрос Дхритараштры",
+      "options": [
+        "Вопрос Дхритараштры",
+        "Отчаяние Арджуны",
+        "Поле битвы",
+        "Песнь Кришны"
+      ],
+      "accepted_answers": [
+        "Вопрос Дхритараштры"
+      ]
+    },
+    {
+      "type": "input",
+      "question_ru": "Напиши название первой главы на IAST",
+      "question_en": "Write the name of Chapter 1 in IAST",
+      "answer_ru": "Арджуна Вишада Йога",
+      "answer_iast": "Arjuna Viṣāda Yoga",
+      "accepted_answers": [
+        "Arjuna Visada Yoga",
+        "Arjuna Viṣāda Yoga"
+      ]
+    },
+    {
+      "type": "choice",
+      "question_ru": "Какой стих является ключевым в первой подглаве?",
+      "question_en": "Which verse is key in the first subchapter?",
+      "answer_ru": "1.1",
+      "options": [
+        "1.1",
+        "1.5",
+        "1.14",
+        "1.28"
+      ],
+      "accepted_answers": [
+        "1.1"
+      ]
+    },
+    {
+      "type": "input",
+      "question_ru": "Что означает слово dharmakṣetra?",
+      "question_en": "What does dharmakṣetra mean?",
+      "answer_ru": "Поле праведности",
+      "accepted_answers": [
+        "Поле праведности",
+        "Поле дхармы",
+        "Field of righteousness"
+      ]
+    },
+    {
+      "type": "choice",
+      "question_ru": "Какие стихи входят в подглаву «Вопрос Дхритараштры»?",
+      "question_en": "Which verses belong to the subchapter 'Dhritarashtra's Question'?",
+      "answer_ru": "1.1",
+      "options": [
+        "1.1",
+        "1.1–1.5",
+        "1.6–1.10",
+        "1.20–1.27"
+      ],
+      "accepted_answers": [
+        "1.1"
+      ]
+    }
+  ]
+}
