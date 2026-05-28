@@ -1,82 +1,1093 @@
 {
+  "cards": [
+    {
+      "id": "card_ch1_title",
+      "question_ru": "Как называется первая глава?",
+      "answer_ru": "Арджуна Вишада Йога",
+      "question_en": "What is Chapter 1 called?",
+      "answer_en": "The Yoga of Arjuna's Despondency",
+      "answer_iast": "Arjuna Viṣāda Yoga",
+      "show_iast_in_ru": true
+    },
+    {
+      "id": "card_ch1_count",
+      "question_ru": "Сколько подглав в первой главе?",
+      "answer_ru": "5 подглав",
+      "question_en": "How many subchapters are in Chapter 1?",
+      "answer_en": "5 subchapters"
+    },
+    {
+      "id": "card_ch1_theme",
+      "question_ru": "Главная тема первой главы?",
+      "answer_ru": "Состояние Арджуны перед наставлением Кришны: смятение, сострадание, отказ сражаться.",
+      "question_en": "What is the main theme of Chapter 1?",
+      "answer_en": "Arjuna’s state before Krishna’s teaching: confusion, compassion, and refusal to fight."
+    },
+    {
+      "id": "card_dharmakshetra",
+      "question_ru": "Что означает dharmakṣetra?",
+      "answer_ru": "Поле праведности / поле праведного действия.",
+      "question_en": "What does dharmakṣetra mean?",
+      "answer_en": "Field of righteousness / field of righteous action.",
+      "answer_iast": "dharmakṣetra",
+      "show_iast_in_ru": true
+    },
+    {
+      "id": "card_body_field",
+      "question_ru": "Что в комментарии называется дхармакшетрой человека?",
+      "answer_ru": "Физическое тело человека.",
+      "question_en": "What is called a person's dharmakṣetra in the commentary?",
+      "answer_en": "The physical body."
+    },
+    {
+      "id": "card_war_inner",
+      "question_ru": "Какой внутренний смысл войны раскрывается в комментарии?",
+      "answer_ru": "Война — это также внутренняя битва между возвышающими и низшими склонностями.",
+      "question_en": "What inner meaning of the war is explained?",
+      "answer_en": "The war is also an inner battle between uplifting and lower tendencies."
+    },
+    {
+      "id": "card_v1_who",
+      "question_ru": "Кто задаёт вопрос в стихе 1.1?",
+      "answer_ru": "Дхритараштра.",
+      "question_en": "Who asks the question in verse 1.1?",
+      "answer_en": "Dhritarashtra."
+    },
+    {
+      "id": "card_sub_1_name",
+      "question_ru": "Как называется подглава 1?",
+      "answer_ru": "Вопрос Дхритараштры",
+      "question_en": "What is subchapter 1 called?",
+      "answer_en": "Dhritarashtra's Question"
+    },
+    {
+      "id": "card_sub_1_verses",
+      "question_ru": "Какие стихи входят в подглаву «Вопрос Дхритараштры»?",
+      "answer_ru": "1.1",
+      "question_en": "Which verses belong to the subchapter “Dhritarashtra's Question”?",
+      "answer_en": "1.1"
+    },
+    {
+      "id": "card_sub_1_key",
+      "question_ru": "Ключевой стих подглавы «Вопрос Дхритараштры»?",
+      "answer_ru": "1.1",
+      "question_en": "Key verse of the subchapter “Dhritarashtra's Question”?",
+      "answer_en": "1.1"
+    },
+    {
+      "id": "card_sub_2_name",
+      "question_ru": "Как называется подглава 2?",
+      "answer_ru": "Описание армий",
+      "question_en": "What is subchapter 2 called?",
+      "answer_en": "Description of the Armies"
+    },
+    {
+      "id": "card_sub_2_verses",
+      "question_ru": "Какие стихи входят в подглаву «Описание армий»?",
+      "answer_ru": "1.2–1.11",
+      "question_en": "Which verses belong to the subchapter “Description of the Armies”?",
+      "answer_en": "1.2–1.11"
+    },
+    {
+      "id": "card_sub_2_key",
+      "question_ru": "Ключевой стих подглавы «Описание армий»?",
+      "answer_ru": "1.10",
+      "question_en": "Key verse of the subchapter “Description of the Armies”?",
+      "answer_en": "1.10"
+    },
+    {
+      "id": "card_sub_3_name",
+      "question_ru": "Как называется подглава 3?",
+      "answer_ru": "Звучание раковин",
+      "question_en": "What is subchapter 3 called?",
+      "answer_en": "The Blowing of the Conches"
+    },
+    {
+      "id": "card_sub_3_verses",
+      "question_ru": "Какие стихи входят в подглаву «Звучание раковин»?",
+      "answer_ru": "1.12–1.19",
+      "question_en": "Which verses belong to the subchapter “The Blowing of the Conches”?",
+      "answer_en": "1.12–1.19"
+    },
+    {
+      "id": "card_sub_3_key",
+      "question_ru": "Ключевой стих подглавы «Звучание раковин»?",
+      "answer_ru": "1.14",
+      "question_en": "Key verse of the subchapter “The Blowing of the Conches”?",
+      "answer_en": "1.14"
+    },
+    {
+      "id": "card_sub_4_name",
+      "question_ru": "Как называется подглава 4?",
+      "answer_ru": "Арджуна осматривает армии",
+      "question_en": "What is subchapter 4 called?",
+      "answer_en": "Arjuna Surveys the Armies"
+    },
+    {
+      "id": "card_sub_4_verses",
+      "question_ru": "Какие стихи входят в подглаву «Арджуна осматривает армии»?",
+      "answer_ru": "1.20–1.27",
+      "question_en": "Which verses belong to the subchapter “Arjuna Surveys the Armies”?",
+      "answer_en": "1.20–1.27"
+    },
+    {
+      "id": "card_sub_4_key",
+      "question_ru": "Ключевой стих подглавы «Арджуна осматривает армии»?",
+      "answer_ru": "1.21",
+      "question_en": "Key verse of the subchapter “Arjuna Surveys the Armies”?",
+      "answer_en": "1.21"
+    },
+    {
+      "id": "card_sub_5_name",
+      "question_ru": "Как называется подглава 5?",
+      "answer_ru": "Отчаяние Арджуны",
+      "question_en": "What is subchapter 5 called?",
+      "answer_en": "Arjuna's Despair"
+    },
+    {
+      "id": "card_sub_5_verses",
+      "question_ru": "Какие стихи входят в подглаву «Отчаяние Арджуны»?",
+      "answer_ru": "1.28–1.47",
+      "question_en": "Which verses belong to the subchapter “Arjuna's Despair”?",
+      "answer_en": "1.28–1.47"
+    },
+    {
+      "id": "card_sub_5_key",
+      "question_ru": "Ключевой стих подглавы «Отчаяние Арджуны»?",
+      "answer_ru": "1.47",
+      "question_en": "Key verse of the subchapter “Arjuna's Despair”?",
+      "answer_en": "1.47"
+    }
+  ],
   "questions": [
     {
+      "id": "q_count_subchapters",
       "type": "input",
+      "level": 1,
+      "language_scope": "any",
       "question_ru": "Сколько подглав в первой главе?",
-      "question_en": "How many subchapters are in Chapter 1?",
       "answer_ru": "5",
-      "accepted_answers": [
+      "question_en": "How many subchapters are in Chapter 1?",
+      "answer_en": "5",
+      "accepted_ru": [
         "5",
-        "пять",
+        "пять"
+      ],
+      "accepted_en": [
+        "5",
         "five"
-      ]
-    },
-    {
-      "type": "choice",
-      "question_ru": "Как называется первая подглава?",
-      "question_en": "What is the first subchapter called?",
-      "answer_ru": "Вопрос Дхритараштры",
-      "options": [
-        "Вопрос Дхритараштры",
-        "Отчаяние Арджуны",
-        "Поле битвы",
-        "Песнь Кришны"
       ],
-      "accepted_answers": [
-        "Вопрос Дхритараштры"
-      ]
+      "accepted_common": []
     },
     {
-      "type": "input",
-      "question_ru": "Напиши название первой главы на IAST",
-      "question_en": "Write the name of Chapter 1 in IAST",
+      "id": "q_ch1_title_ru",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Как называется первая глава?",
       "answer_ru": "Арджуна Вишада Йога",
-      "answer_iast": "Arjuna Viṣāda Yoga",
-      "accepted_answers": [
-        "Arjuna Visada Yoga",
-        "Arjuna Viṣāda Yoga"
-      ]
-    },
-    {
-      "type": "choice",
-      "question_ru": "Какой стих является ключевым в первой подглаве?",
-      "question_en": "Which verse is key in the first subchapter?",
-      "answer_ru": "1.1",
-      "options": [
-        "1.1",
-        "1.5",
-        "1.14",
-        "1.28"
+      "options_ru": [
+        "Арджуна Вишада Йога",
+        "Карма-йога",
+        "Санкхья-йога",
+        "Бхакти-йога"
       ],
-      "accepted_answers": [
-        "1.1"
-      ]
+      "question_en": "What is Chapter 1 called?",
+      "answer_en": "The Yoga of Arjuna's Despondency",
+      "options_en": [
+        "The Yoga of Arjuna's Despondency",
+        "Karma Yoga",
+        "Sankhya Yoga",
+        "Bhakti Yoga"
+      ],
+      "accepted_ru": [
+        "Арджуна Вишада Йога"
+      ],
+      "accepted_en": [
+        "The Yoga of Arjuna's Despondency"
+      ],
+      "accepted_common": []
     },
     {
+      "id": "q_ch1_title_iast",
       "type": "input",
-      "question_ru": "Что означает слово dharmakṣetra?",
-      "question_en": "What does dharmakṣetra mean?",
-      "answer_ru": "Поле праведности",
-      "accepted_answers": [
-        "Поле праведности",
-        "Поле дхармы",
-        "Field of righteousness"
-      ]
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши название первой главы на IAST.",
+      "answer_ru": "Arjuna Viṣāda Yoga",
+      "question_en": "Write the title of Chapter 1 in IAST.",
+      "answer_en": "Arjuna Viṣāda Yoga",
+      "accepted_ru": [
+        "Arjuna Viṣāda Yoga"
+      ],
+      "accepted_en": [
+        "Arjuna Viṣāda Yoga"
+      ],
+      "accepted_common": [
+        "Arjuna Visada Yoga",
+        "Arjuna Vishada Yoga",
+        "Arjuna-Visada-Yoga",
+        "Arjuna Viṣāda Yoga"
+      ],
+      "answer_iast": "Arjuna Viṣāda Yoga"
     },
     {
+      "id": "q_v1_who",
       "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Кто задаёт вопрос в стихе 1.1?",
+      "answer_ru": "Дхритараштра",
+      "options_ru": [
+        "Дхритараштра",
+        "Арджуна",
+        "Кришна",
+        "Санджая"
+      ],
+      "question_en": "Who asks the question in verse 1.1?",
+      "answer_en": "Dhritarashtra",
+      "options_en": [
+        "Dhritarashtra",
+        "Arjuna",
+        "Krishna",
+        "Sanjaya"
+      ],
+      "accepted_ru": [
+        "Дхритараштра"
+      ],
+      "accepted_en": [
+        "Dhritarashtra"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_v1_to_whom",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "К кому обращается Дхритараштра?",
+      "answer_ru": "К Санджае",
+      "options_ru": [
+        "К Санджае",
+        "К Арджуне",
+        "К Кришне",
+        "К Бхишме"
+      ],
+      "question_en": "To whom does Dhritarashtra speak?",
+      "answer_en": "To Sanjaya",
+      "options_en": [
+        "To Sanjaya",
+        "To Arjuna",
+        "To Krishna",
+        "To Bhishma"
+      ],
+      "accepted_ru": [
+        "К Санджае"
+      ],
+      "accepted_en": [
+        "To Sanjaya"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_dharma",
+      "type": "input",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Что означает dharma в комментарии?",
+      "answer_ru": "Праведность / долг",
+      "question_en": "What does dharma mean in the commentary?",
+      "answer_en": "Righteousness / duty",
+      "accepted_ru": [
+        "праведность",
+        "долг",
+        "дхарма"
+      ],
+      "accepted_en": [
+        "righteousness",
+        "duty",
+        "dharma"
+      ],
+      "accepted_common": [
+        "dharma"
+      ],
+      "answer_iast": "dharma"
+    },
+    {
+      "id": "q_kshetra",
+      "type": "input",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Что означает kṣetra?",
+      "answer_ru": "Поле",
+      "question_en": "What does kṣetra mean?",
+      "answer_en": "Field",
+      "accepted_ru": [
+        "поле"
+      ],
+      "accepted_en": [
+        "field"
+      ],
+      "accepted_common": [
+        "kṣetra"
+      ],
+      "answer_iast": "kṣetra"
+    },
+    {
+      "id": "q_dharmakshetra",
+      "type": "input",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Что означает dharmakṣetra?",
+      "answer_ru": "Поле праведности",
+      "question_en": "What does dharmakṣetra mean?",
+      "answer_en": "Field of righteousness",
+      "accepted_ru": [
+        "поле праведности",
+        "поле праведного действия",
+        "поле дхармы"
+      ],
+      "accepted_en": [
+        "field of righteousness",
+        "field of righteous action",
+        "field of dharma"
+      ],
+      "accepted_common": [
+        "dharmakṣetra"
+      ],
+      "answer_iast": "dharmakṣetra"
+    },
+    {
+      "id": "q_body_field",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Что в комментарии называется дхармакшетрой человека?",
+      "answer_ru": "Физическое тело",
+      "options_ru": [
+        "Физическое тело",
+        "Дом",
+        "Храм",
+        "Курукшетра как место на карте"
+      ],
+      "question_en": "What is called a person's dharmakṣetra in the commentary?",
+      "answer_en": "The physical body",
+      "options_en": [
+        "The physical body",
+        "A house",
+        "A temple",
+        "Kurukshetra as a map location"
+      ],
+      "accepted_ru": [
+        "Физическое тело"
+      ],
+      "accepted_en": [
+        "The physical body"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_inner_war",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Какой внутренний смысл войны раскрывается в комментарии?",
+      "answer_ru": "Внутренняя битва в жизни человека",
+      "options_ru": [
+        "Внутренняя битва в жизни человека",
+        "Только историческое событие",
+        "Только спор царей",
+        "Только политический конфликт"
+      ],
+      "question_en": "What inner meaning of the war is explained?",
+      "answer_en": "An inner battle in human life",
+      "options_en": [
+        "An inner battle in human life",
+        "Only a historical event",
+        "Only a dispute of kings",
+        "Only a political conflict"
+      ],
+      "accepted_ru": [
+        "Внутренняя битва в жизни человека"
+      ],
+      "accepted_en": [
+        "An inner battle in human life"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_ch1_end",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Чем заканчивается первая глава?",
+      "answer_ru": "Арджуна в печали отбрасывает лук",
+      "options_ru": [
+        "Арджуна в печали отбрасывает лук",
+        "Кришна раскрывает вселенскую форму",
+        "Арджуна побеждает",
+        "Битва завершается"
+      ],
+      "question_en": "How does Chapter 1 end?",
+      "answer_en": "Arjuna casts aside his bow in sorrow",
+      "options_en": [
+        "Arjuna casts aside his bow in sorrow",
+        "Krishna reveals the universal form",
+        "Arjuna wins",
+        "The battle ends"
+      ],
+      "accepted_ru": [
+        "Арджуна в печали отбрасывает лук"
+      ],
+      "accepted_en": [
+        "Arjuna casts aside his bow in sorrow"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_1_name_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Как называется подглава 1 первой главы?",
+      "answer_ru": "Вопрос Дхритараштры",
+      "options_ru": [
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Звучание раковин",
+        "Арджуна осматривает армии"
+      ],
+      "question_en": "What is subchapter 1 of Chapter 1 called?",
+      "answer_en": "Dhritarashtra's Question",
+      "options_en": [
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "The Blowing of the Conches",
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_ru": [
+        "Вопрос Дхритараштры"
+      ],
+      "accepted_en": [
+        "Dhritarashtra's Question"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_1_name_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши название подглавы 1.",
+      "answer_ru": "Вопрос Дхритараштры",
+      "question_en": "Write the title of subchapter 1.",
+      "answer_en": "Dhritarashtra's Question",
+      "accepted_ru": [
+        "Вопрос Дхритараштры"
+      ],
+      "accepted_en": [
+        "Dhritarashtra's Question"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_1_verses_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
       "question_ru": "Какие стихи входят в подглаву «Вопрос Дхритараштры»?",
-      "question_en": "Which verses belong to the subchapter 'Dhritarashtra's Question'?",
       "answer_ru": "1.1",
-      "options": [
+      "options_ru": [
         "1.1",
-        "1.1–1.5",
-        "1.6–1.10",
+        "1.2–1.11",
+        "1.12–1.19",
         "1.20–1.27"
       ],
-      "accepted_answers": [
+      "question_en": "Which verses belong to “Dhritarashtra's Question”?",
+      "answer_en": "1.1",
+      "options_en": [
+        "1.1",
+        "1.2–1.11",
+        "1.12–1.19",
+        "1.20–1.27"
+      ],
+      "accepted_ru": [
+        "1.1"
+      ],
+      "accepted_en": [
+        "1.1"
+      ],
+      "accepted_common": [
         "1.1"
       ]
+    },
+    {
+      "id": "q_sub_1_key_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши ключевой стих подглавы «Вопрос Дхритараштры».",
+      "answer_ru": "1.1",
+      "question_en": "Write the key verse of “Dhritarashtra's Question”.",
+      "answer_en": "1.1",
+      "accepted_ru": [
+        "1.1",
+        "1-1",
+        "1 1"
+      ],
+      "accepted_en": [
+        "1.1",
+        "1-1",
+        "1 1"
+      ],
+      "accepted_common": [
+        "1.1"
+      ]
+    },
+    {
+      "id": "q_sub_2_name_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Как называется подглава 2 первой главы?",
+      "answer_ru": "Описание армий",
+      "options_ru": [
+        "Описание армий",
+        "Вопрос Дхритараштры",
+        "Звучание раковин",
+        "Арджуна осматривает армии"
+      ],
+      "question_en": "What is subchapter 2 of Chapter 1 called?",
+      "answer_en": "Description of the Armies",
+      "options_en": [
+        "Description of the Armies",
+        "Dhritarashtra's Question",
+        "The Blowing of the Conches",
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_ru": [
+        "Описание армий"
+      ],
+      "accepted_en": [
+        "Description of the Armies"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_2_name_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши название подглавы 2.",
+      "answer_ru": "Описание армий",
+      "question_en": "Write the title of subchapter 2.",
+      "answer_en": "Description of the Armies",
+      "accepted_ru": [
+        "Описание армий"
+      ],
+      "accepted_en": [
+        "Description of the Armies"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_2_verses_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Какие стихи входят в подглаву «Описание армий»?",
+      "answer_ru": "1.2–1.11",
+      "options_ru": [
+        "1.2–1.11",
+        "1.1",
+        "1.12–1.19",
+        "1.20–1.27"
+      ],
+      "question_en": "Which verses belong to “Description of the Armies”?",
+      "answer_en": "1.2–1.11",
+      "options_en": [
+        "1.2–1.11",
+        "1.1",
+        "1.12–1.19",
+        "1.20–1.27"
+      ],
+      "accepted_ru": [
+        "1.2–1.11"
+      ],
+      "accepted_en": [
+        "1.2–1.11"
+      ],
+      "accepted_common": [
+        "1.2–1.11"
+      ]
+    },
+    {
+      "id": "q_sub_2_key_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши ключевой стих подглавы «Описание армий».",
+      "answer_ru": "1.10",
+      "question_en": "Write the key verse of “Description of the Armies”.",
+      "answer_en": "1.10",
+      "accepted_ru": [
+        "1.10",
+        "1-10",
+        "1 10"
+      ],
+      "accepted_en": [
+        "1.10",
+        "1-10",
+        "1 10"
+      ],
+      "accepted_common": [
+        "1.10"
+      ]
+    },
+    {
+      "id": "q_sub_3_name_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Как называется подглава 3 первой главы?",
+      "answer_ru": "Звучание раковин",
+      "options_ru": [
+        "Звучание раковин",
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Арджуна осматривает армии"
+      ],
+      "question_en": "What is subchapter 3 of Chapter 1 called?",
+      "answer_en": "The Blowing of the Conches",
+      "options_en": [
+        "The Blowing of the Conches",
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_ru": [
+        "Звучание раковин"
+      ],
+      "accepted_en": [
+        "The Blowing of the Conches"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_3_name_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши название подглавы 3.",
+      "answer_ru": "Звучание раковин",
+      "question_en": "Write the title of subchapter 3.",
+      "answer_en": "The Blowing of the Conches",
+      "accepted_ru": [
+        "Звучание раковин"
+      ],
+      "accepted_en": [
+        "The Blowing of the Conches"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_3_verses_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Какие стихи входят в подглаву «Звучание раковин»?",
+      "answer_ru": "1.12–1.19",
+      "options_ru": [
+        "1.12–1.19",
+        "1.1",
+        "1.2–1.11",
+        "1.20–1.27"
+      ],
+      "question_en": "Which verses belong to “The Blowing of the Conches”?",
+      "answer_en": "1.12–1.19",
+      "options_en": [
+        "1.12–1.19",
+        "1.1",
+        "1.2–1.11",
+        "1.20–1.27"
+      ],
+      "accepted_ru": [
+        "1.12–1.19"
+      ],
+      "accepted_en": [
+        "1.12–1.19"
+      ],
+      "accepted_common": [
+        "1.12–1.19"
+      ]
+    },
+    {
+      "id": "q_sub_3_key_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши ключевой стих подглавы «Звучание раковин».",
+      "answer_ru": "1.14",
+      "question_en": "Write the key verse of “The Blowing of the Conches”.",
+      "answer_en": "1.14",
+      "accepted_ru": [
+        "1.14",
+        "1-14",
+        "1 14"
+      ],
+      "accepted_en": [
+        "1.14",
+        "1-14",
+        "1 14"
+      ],
+      "accepted_common": [
+        "1.14"
+      ]
+    },
+    {
+      "id": "q_sub_4_name_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Как называется подглава 4 первой главы?",
+      "answer_ru": "Арджуна осматривает армии",
+      "options_ru": [
+        "Арджуна осматривает армии",
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Звучание раковин"
+      ],
+      "question_en": "What is subchapter 4 of Chapter 1 called?",
+      "answer_en": "Arjuna Surveys the Armies",
+      "options_en": [
+        "Arjuna Surveys the Armies",
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "The Blowing of the Conches"
+      ],
+      "accepted_ru": [
+        "Арджуна осматривает армии"
+      ],
+      "accepted_en": [
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_4_name_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши название подглавы 4.",
+      "answer_ru": "Арджуна осматривает армии",
+      "question_en": "Write the title of subchapter 4.",
+      "answer_en": "Arjuna Surveys the Armies",
+      "accepted_ru": [
+        "Арджуна осматривает армии"
+      ],
+      "accepted_en": [
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_4_verses_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Какие стихи входят в подглаву «Арджуна осматривает армии»?",
+      "answer_ru": "1.20–1.27",
+      "options_ru": [
+        "1.20–1.27",
+        "1.1",
+        "1.2–1.11",
+        "1.12–1.19"
+      ],
+      "question_en": "Which verses belong to “Arjuna Surveys the Armies”?",
+      "answer_en": "1.20–1.27",
+      "options_en": [
+        "1.20–1.27",
+        "1.1",
+        "1.2–1.11",
+        "1.12–1.19"
+      ],
+      "accepted_ru": [
+        "1.20–1.27"
+      ],
+      "accepted_en": [
+        "1.20–1.27"
+      ],
+      "accepted_common": [
+        "1.20–1.27"
+      ]
+    },
+    {
+      "id": "q_sub_4_key_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши ключевой стих подглавы «Арджуна осматривает армии».",
+      "answer_ru": "1.21",
+      "question_en": "Write the key verse of “Arjuna Surveys the Armies”.",
+      "answer_en": "1.21",
+      "accepted_ru": [
+        "1.21",
+        "1-21",
+        "1 21"
+      ],
+      "accepted_en": [
+        "1.21",
+        "1-21",
+        "1 21"
+      ],
+      "accepted_common": [
+        "1.21"
+      ]
+    },
+    {
+      "id": "q_sub_5_name_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Как называется подглава 5 первой главы?",
+      "answer_ru": "Отчаяние Арджуны",
+      "options_ru": [
+        "Отчаяние Арджуны",
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Звучание раковин"
+      ],
+      "question_en": "What is subchapter 5 of Chapter 1 called?",
+      "answer_en": "Arjuna's Despair",
+      "options_en": [
+        "Arjuna's Despair",
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "The Blowing of the Conches"
+      ],
+      "accepted_ru": [
+        "Отчаяние Арджуны"
+      ],
+      "accepted_en": [
+        "Arjuna's Despair"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_5_name_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши название подглавы 5.",
+      "answer_ru": "Отчаяние Арджуны",
+      "question_en": "Write the title of subchapter 5.",
+      "answer_en": "Arjuna's Despair",
+      "accepted_ru": [
+        "Отчаяние Арджуны"
+      ],
+      "accepted_en": [
+        "Arjuna's Despair"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_sub_5_verses_choice",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "Какие стихи входят в подглаву «Отчаяние Арджуны»?",
+      "answer_ru": "1.28–1.47",
+      "options_ru": [
+        "1.28–1.47",
+        "1.1",
+        "1.2–1.11",
+        "1.12–1.19"
+      ],
+      "question_en": "Which verses belong to “Arjuna's Despair”?",
+      "answer_en": "1.28–1.47",
+      "options_en": [
+        "1.28–1.47",
+        "1.1",
+        "1.2–1.11",
+        "1.12–1.19"
+      ],
+      "accepted_ru": [
+        "1.28–1.47"
+      ],
+      "accepted_en": [
+        "1.28–1.47"
+      ],
+      "accepted_common": [
+        "1.28–1.47"
+      ]
+    },
+    {
+      "id": "q_sub_5_key_input",
+      "type": "input",
+      "level": 2,
+      "language_scope": "any",
+      "question_ru": "Напиши ключевой стих подглавы «Отчаяние Арджуны».",
+      "answer_ru": "1.47",
+      "question_en": "Write the key verse of “Arjuna's Despair”.",
+      "answer_en": "1.47",
+      "accepted_ru": [
+        "1.47",
+        "1-47",
+        "1 47"
+      ],
+      "accepted_en": [
+        "1.47",
+        "1-47",
+        "1 47"
+      ],
+      "accepted_common": [
+        "1.47"
+      ]
+    },
+    {
+      "id": "q_verse_1.1_sub",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "К какой подглаве относится стих 1.1?",
+      "answer_ru": "Вопрос Дхритараштры",
+      "options_ru": [
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Звучание раковин",
+        "Арджуна осматривает армии"
+      ],
+      "question_en": "Which subchapter does verse 1.1 belong to?",
+      "answer_en": "Dhritarashtra's Question",
+      "options_en": [
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "The Blowing of the Conches",
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_ru": [
+        "Вопрос Дхритараштры"
+      ],
+      "accepted_en": [
+        "Dhritarashtra's Question"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_verse_1.5_sub",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "К какой подглаве относится стих 1.5?",
+      "answer_ru": "Описание армий",
+      "options_ru": [
+        "Описание армий",
+        "Вопрос Дхритараштры",
+        "Звучание раковин",
+        "Арджуна осматривает армии"
+      ],
+      "question_en": "Which subchapter does verse 1.5 belong to?",
+      "answer_en": "Description of the Armies",
+      "options_en": [
+        "Description of the Armies",
+        "Dhritarashtra's Question",
+        "The Blowing of the Conches",
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_ru": [
+        "Описание армий"
+      ],
+      "accepted_en": [
+        "Description of the Armies"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_verse_1.14_sub",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "К какой подглаве относится стих 1.14?",
+      "answer_ru": "Звучание раковин",
+      "options_ru": [
+        "Звучание раковин",
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Арджуна осматривает армии"
+      ],
+      "question_en": "Which subchapter does verse 1.14 belong to?",
+      "answer_en": "The Blowing of the Conches",
+      "options_en": [
+        "The Blowing of the Conches",
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_ru": [
+        "Звучание раковин"
+      ],
+      "accepted_en": [
+        "The Blowing of the Conches"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_verse_1.21_sub",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "К какой подглаве относится стих 1.21?",
+      "answer_ru": "Арджуна осматривает армии",
+      "options_ru": [
+        "Арджуна осматривает армии",
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Звучание раковин"
+      ],
+      "question_en": "Which subchapter does verse 1.21 belong to?",
+      "answer_en": "Arjuna Surveys the Armies",
+      "options_en": [
+        "Arjuna Surveys the Armies",
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "The Blowing of the Conches"
+      ],
+      "accepted_ru": [
+        "Арджуна осматривает армии"
+      ],
+      "accepted_en": [
+        "Arjuna Surveys the Armies"
+      ],
+      "accepted_common": []
+    },
+    {
+      "id": "q_verse_1.47_sub",
+      "type": "choice",
+      "level": 1,
+      "language_scope": "any",
+      "question_ru": "К какой подглаве относится стих 1.47?",
+      "answer_ru": "Отчаяние Арджуны",
+      "options_ru": [
+        "Отчаяние Арджуны",
+        "Вопрос Дхритараштры",
+        "Описание армий",
+        "Звучание раковин"
+      ],
+      "question_en": "Which subchapter does verse 1.47 belong to?",
+      "answer_en": "Arjuna's Despair",
+      "options_en": [
+        "Arjuna's Despair",
+        "Dhritarashtra's Question",
+        "Description of the Armies",
+        "The Blowing of the Conches"
+      ],
+      "accepted_ru": [
+        "Отчаяние Арджуны"
+      ],
+      "accepted_en": [
+        "Arjuna's Despair"
+      ],
+      "accepted_common": []
     }
   ]
 }
